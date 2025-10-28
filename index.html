@@ -1,0 +1,106 @@
+# Create the HTML file
+cat > index.html << 'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CI/CD Demo Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 600px;
+        }
+        
+        h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #48bb78;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        
+        p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+        
+        .info-box {
+            background: #f7fafc;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .info-box strong {
+            color: #667eea;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            color: #a0aec0;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 CI/CD Pipeline Demo</h1>
+        <div class="badge">✅ Deployment Successful - Version 2.0</div>
+        
+        <p>
+            Welcome to your automated deployment demo! This website was deployed 
+            automatically using AWS CodePipeline.
+        </p>
+        
+        <div class="info-box">
+            <p><strong>How it works:</strong></p>
+            <p>
+                Every time you push changes to your Git repository, CodePipeline 
+                automatically detects the change, pulls the latest code, and deploys 
+                it to your S3 bucket. No manual intervention required!
+            </p>
+        </div>
+        
+        <p>
+            Try updating this page and watch the magic happen! ✨
+        </p>
+        
+        <div class="footer">
+            <p>Deployed via AWS CodePipeline | Last Updated: Initial Deployment</p>
+        </div>
+    </div>
+</body>
+</html>
+EOF
